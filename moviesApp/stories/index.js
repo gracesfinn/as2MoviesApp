@@ -5,6 +5,9 @@ import MovieCard from "../src/components/movieCard";
 import FilterControls from "../src/components/filterControls";
 import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
+import MovieDetails from "../src/components/movieDetails";
+import CastDetails from "../src/components/castDetails";
+import MovieHeader from '../src/components/headerMovie'
 
 const sample = {
   adult: false,
@@ -34,6 +37,49 @@ const sample = {
       name: "Action"
     }
   ],
+  cast: [
+    {
+    cast_id: 14,
+    character: "Luke Skywalker / Dobbu Scay (voice)",
+    credit_id: "5679cdd4c3a3685bbf000206",
+    gender: 2,
+    id: 2,
+    name: "Mark Hamill",
+    order: 0,
+    profile_path: "/fk8OfdReNltKZqOk2TZgkofCUFq.jpg"
+    },
+    {
+    cast_id: 15,
+    character: "General Leia Organa",
+    credit_id: "567aa394c3a3685bdf00266a",
+    gender: 1,
+    id: 4,
+    name: "Carrie Fisher",
+    order: 1,
+    profile_path: "/rfJtncHewKVnHjqpIZvjn24ESeC.jpg"
+    },
+    {
+    cast_id: 13,
+    character: "Kylo Ren / Ben Solo",
+    credit_id: "5679cdbd92514106f50001e9",
+    gender: 2,
+    id: 1023139,
+    name: "Adam Driver",
+    order: 2,
+    profile_path: "/fsbGQ1eZFgdsG1XnKlhNSvHsiGo.jpg"
+    },
+    {
+    cast_id: 11,
+    character: "Rey",
+    credit_id: "562fdd999251413b460008ad",
+    gender: 1,
+    id: 1315036,
+    name: "Daisy Ridley",
+    order: 3,
+    profile_path: "/n8kBnNOi9VmELHJy3FdZjrSN9zT.jpg"
+    }
+  ],
+
   homepage:
     "https://www.starwars.com/films/star-wars-episode-viii-the-last-jedi",
   id: 181808,
@@ -106,3 +152,14 @@ storiesOf("Home Page/MovieCard", module)
     const movies= [sample, sample, sample, sample, sample]
     return <MovieList movies={movies} />
 });
+storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
+  <MovieDetails movie={sample} />
+));
+
+storiesOf("Movie Details Page/CastDetails", module).add("default", () => (
+  <CastDetails movie={sample} />
+));
+
+storiesOf("Movie Details Page/MovieHeader", module).add("default", () => (
+  <MovieHeader movie={sample} />
+));

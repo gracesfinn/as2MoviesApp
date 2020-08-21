@@ -15,6 +15,7 @@ const MovieCard = props => {
               ? `https://image.tmdb.org/t/p/w500/${props.movie.poster_path}`
               : "./film-poster-placeholder.png"
           }
+          
         />
         <div className="card-body">
           <h4 className="card-title ">{props.movie.title}</h4>
